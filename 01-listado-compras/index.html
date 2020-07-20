@@ -12,14 +12,16 @@
 
 <body>
 	<div id="lista-compras">
-		<h1>{{header}}</h1>
+		<!-- <h1>{{ header ? header : 'Bienvenido' }}</h1> -->
+		<h1>{{ header.toLocaleUpperCase() }}</h1>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
 	<script>
 		var app = new Vue({
 			el: '#lista-compras',
 			data: {
-				header: 'Vue iniciado con exito, bienvenido a la fiesta con vue'
+				header: 'Listado de utiles'
 			}
 		})
 	</script>
