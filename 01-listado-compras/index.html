@@ -11,17 +11,18 @@
 </head>
 
 <body>
-	<div id="lista-compras">
-		<!-- <h1>{{ header ? header : 'Bienvenido' }}</h1> -->
-		<h1>{{ header.toLocaleUpperCase() }}</h1>
-		<div>
-			<input type="text" placeholder="Agregar nuevo" v-model="newUtil" @keyUp.enter="guardarElemento">
-			<button class="btn btn-primary" @click="guardarElemento">Agregar elemento</button>
+	<div class="container">
+		<div id="lista-compras">
+			<!-- <h1>{{ header ? header : 'Bienvenido' }}</h1> -->
+			<h1>{{ header.toLocaleUpperCase() }}</h1>
+			<div>
+				<input type="text" placeholder="Agregar nuevo" v-model="newUtil" @keyUp.enter="guardarElemento">
+				<button class="btn btn-primary" @click="guardarElemento">Agregar elemento</button>
+			</div>
+			<ul>
+				<li v-for="ele in utiles">{{ele}}</li>
+			</ul>
 		</div>
-		<ul>
-			<li v-for="ele in utiles">{{ele}}</li>
-		</ul>
-
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
@@ -40,6 +41,7 @@
 			methods: {
 				guardarElemento: function () {
 					this.utiles.push(this.newUtil);
+					this.newUtil = '';
 				}
 			}
 		});
