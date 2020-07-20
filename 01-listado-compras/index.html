@@ -15,8 +15,8 @@
 		<!-- <h1>{{ header ? header : 'Bienvenido' }}</h1> -->
 		<h1>{{ header.toLocaleUpperCase() }}</h1>
 		<div>
-			<input type="text" placeholder="Agregar nuevo" v-model="newUtil" v-on:keyUp.enter="utiles.push(newUtil)">
-			<button class="btn btn-primary" v-on:click="utiles.push(newUtil)">Agregar elemento</button>
+			<input type="text" placeholder="Agregar nuevo" v-model="newUtil" @keyUp.enter="guardarElemento">
+			<button class="btn btn-primary" @click="guardarElemento">Agregar elemento</button>
 		</div>
 		<ul>
 			<li v-for="ele in utiles">{{ele}}</li>
@@ -36,6 +36,11 @@
 					'15 lapices',
 					'5 cajas de colores'
 				]
+			},
+			methods: {
+				guardarElemento: function () {
+					this.utiles.push(this.newUtil);
+				}
 			}
 		});
 	</script>
