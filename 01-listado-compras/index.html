@@ -24,7 +24,9 @@
 				<button class="btn btn-primary" :disabled="newUtil.length === 0" @click="guardarElemento">Guardar</button>
 			</div>
 			<ul>
-				<li v-for="ele in utiles" :class="{tachado : ele.comprado}" @click="cambiarEstadoCompra(ele)">{{ele.util}}</li>
+				<li v-for="ele in listarReversa" :class="{tachado : ele.comprado}" @click="cambiarEstadoCompra(ele)">
+					{{ele.util}}
+				</li>
 			</ul>
 			<p v-if="utiles.length === 0">No existen elementos en la lista</p>
 		</div>
@@ -50,6 +52,11 @@
 						comprado: false
 					}
 				]
+			},
+			computed: {
+				listarReversa: function () {
+					return this.utiles.slice(0).reverse();
+				}
 			},
 			methods: {
 				guardarElemento: function () {
