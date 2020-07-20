@@ -14,6 +14,7 @@
 	<div id="lista-compras">
 		<!-- <h1>{{ header ? header : 'Bienvenido' }}</h1> -->
 		<h1>{{ header.toLocaleUpperCase() }}</h1>
+		<input type="text" placeholder="Agregar nuevo" v-model="newUtil">
 		<ul>
 			<li v-for="ele in utiles">{{ele}}</li>
 		</ul>
@@ -26,6 +27,7 @@
 			el: "#lista-compras",
 			data: {
 				header: "Listado de utiles",
+				newUtil: '',
 				utiles: [
 					'10 cuadernos',
 					'15 lapices',
