@@ -23,7 +23,7 @@
 				<button class="btn btn-primary" :disabled="newUtil.length === 0" @click="guardarElemento">Guardar</button>
 			</div>
 			<ul>
-				<li v-for="ele in utiles">{{ele}}</li>
+				<li v-for="ele in utiles">{{ele.util}}</li>
 			</ul>
 			<p v-if="utiles.length === 0">No existen elementos en la lista</p>
 		</div>
@@ -38,14 +38,20 @@
 				newUtil: '',
 				estado: 'default',
 				utiles: [
-					// '10 cuadernos',
-					//'15 lapices',
-					//'5 cajas de colores'
+					{
+						util: '10 cuadernos'
+					}, {
+						util: '15 lapices'
+					}, {
+						util: '5 cajas de colores'
+					}
 				]
 			},
 			methods: {
 				guardarElemento: function () {
-					this.utiles.push(this.newUtil);
+					this.utiles.push({
+						util: this.newUtil
+					});
 					this.newUtil = '';
 				},
 				cambiarEstado: function (newEstado) {
