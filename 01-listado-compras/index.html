@@ -8,6 +8,7 @@
 	</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="main.css">
 </head>
 
 <body>
@@ -23,7 +24,7 @@
 				<button class="btn btn-primary" :disabled="newUtil.length === 0" @click="guardarElemento">Guardar</button>
 			</div>
 			<ul>
-				<li v-for="ele in utiles">{{ele.util}}</li>
+				<li v-for="ele in utiles" :class="{tachado : ele.comprado}" @click="cambiarEstadoCompra(ele)">{{ele.util}}</li>
 			</ul>
 			<p v-if="utiles.length === 0">No existen elementos en la lista</p>
 		</div>
@@ -39,24 +40,31 @@
 				estado: 'default',
 				utiles: [
 					{
-						util: '10 cuadernos'
+						util: '10 cuadernos',
+						comprado: true
 					}, {
-						util: '15 lapices'
+						util: '15 lapices',
+						comprado: true
 					}, {
-						util: '5 cajas de colores'
+						util: '5 cajas de colores',
+						comprado: false
 					}
 				]
 			},
 			methods: {
 				guardarElemento: function () {
 					this.utiles.push({
-						util: this.newUtil
+						util: this.newUtil,
+						comprado: false
 					});
 					this.newUtil = '';
 				},
 				cambiarEstado: function (newEstado) {
 					this.estado = newEstado;
 					this.newUtil = '';
+				},
+				cambiarEstadoCompra(util) {
+					util.comprado = !util.comprado;
 				}
 			}
 		});
