@@ -20,7 +20,7 @@
 			</div>
 			<div v-if="estado === 'edit'">
 				<input type="text" placeholder="Agregar nuevo" v-model="newUtil" @keyUp.enter="guardarElemento">
-				<button class="btn btn-primary" @click="guardarElemento">Guardar</button>
+				<button class="btn btn-primary" :disabled="newUtil.length === 0" @click="guardarElemento">Guardar</button>
 			</div>
 			<ul>
 				<li v-for="ele in utiles">{{ele}}</li>
