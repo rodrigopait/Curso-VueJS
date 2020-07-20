@@ -14,16 +14,25 @@
 	<div id="lista-compras">
 		<!-- <h1>{{ header ? header : 'Bienvenido' }}</h1> -->
 		<h1>{{ header.toLocaleUpperCase() }}</h1>
+		<ul>
+			<li v-for="ele in utiles">{{ele}}</li>
+		</ul>
+
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
 	<script>
 		var app = new Vue({
-			el: '#lista-compras',
+			el: "#lista-compras",
 			data: {
-				header: 'Listado de utiles'
+				header: "Listado de utiles",
+				utiles: [
+					'10 cuadernos',
+					'15 lapices',
+					'5 cajas de colores'
+				]
 			}
-		})
+		});
 	</script>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
