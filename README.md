@@ -1,2 +1,2 @@
-# Vue
-Curso Vue de Udemy
+# Vue JS
+Curso Vue JS de Udemy
