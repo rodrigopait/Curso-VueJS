@@ -1,0 +1,13 @@
+.DS_Store
+02-generador-notas/node_modules/
+02-generador-notas/dist/
+02-generador-notas/npm-debug.log
+02-generador-notas/yarn-error.log
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.vscode
