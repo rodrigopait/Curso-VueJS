@@ -10,4 +10,4 @@
 *.ntvs*
 *.njsproj
 *.sln
-.vscode
+.vscode/
