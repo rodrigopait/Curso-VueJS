@@ -1,16 +1,8 @@
 .DS_Store
-02-generador-notas/node_modules/
-02-generador-notas/dist/
-02-generador-notas/npm-debug.log
-02-generador-notas/yarn-error.log
-03-componentes/node_modules/
-03-componentes/dist/
-03-componentes/npm-debug.log
-03-componentes/yarn-error.log
-04-vuecli/node_modules/
-04-vuecli/dist/
-04-vuecli/npm-debug.log
-04-vuecli/yarn-error.log
+*/node_modules/
+*/dist/
+*/npm-debug.log
+*/yarn-error.log
 
 # Editor directories and files
 .idea
