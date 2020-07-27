@@ -7,6 +7,10 @@
 03-componentes/dist/
 03-componentes/npm-debug.log
 03-componentes/yarn-error.log
+04-vuecli/node_modules/
+04-vuecli/dist/
+04-vuecli/npm-debug.log
+04-vuecli/yarn-error.log
 
 # Editor directories and files
 .idea
