@@ -11,11 +11,7 @@
       <br />
       <h2>Listado de planes de cursos de programacion</h2>
       <div class="planes">
-        <plan nombre="Plan 1 - Principiante" />
-        <plan nombre="Plan 2 - Intermedio" />
-        <plan nombre="Plan 3 - Avanzado" />
-        <plan nombre="Plan 4 - hackers" />
-        <plan />
+        <plan v-for="pla in planes" :nombre="pla" :key="pla" />
       </div>
     </center>
   </div>
@@ -30,6 +26,16 @@ export default {
   components: {
     Contador,
     Plan,
+  },
+  data() {
+    return {
+      planes: [
+        "Plan 1 - Principiante",
+        "Plan 2 - Intermedio",
+        "Plan 3 - Avanzado",
+        "Plan 4 - hackers",
+      ],
+    };
   },
 };
 </script>
